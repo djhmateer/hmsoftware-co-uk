@@ -7,12 +7,79 @@
   <link href="/build/tailwind.css" rel="stylesheet">
 </head>
 
-<body class="bg-gray-100"></body>
-  <h1 class="text-4xl font-bold text-center text-blue-500">HMSoftware</h1>
+<body class="bg-gray-200">
+  <!-- this is neat so can see where the flex box ends-->
+  <div class="bg-gray-100 flex ">
+    <!-- p is padding, 0 to 64 -->
+    <!-- px is horizontal ie from the left, py is vertical from the top -->
+    <!-- this div container encompasses the whole thing-->
 
-<p>dave@hmsoftware.co.uk </p>
+    <!-- could do a max width of md (medium) to constrain the size-->
+    <!-- then an mx of auto to centre -->
+    <!-- on > sm and md screen size made max width a bit bigger -->
+    <!-- on > lg make max width full, -->
 
-<p>8</p>
+    <!-- 1st container - main image hidden when > lg-->
+    <!-- 1/2 screen size ie split between image and text right and left-->
+    <!-- max-w-full on lg, rather than the constrained xl-->
+    <div class="px-8 py-12 max-w-md mx-auto sm:max-w-xl lg:max-w-full lg:w-1/2 lg:py-24 lg:px-12">
+      <!-- container for only > xl constraing the width of content-->
+      <!-- margin left is auto to right butt-->
+      <div class="xl:max-w-lg xl:ml-auto">
+        <!-- logo height never changes-->
+        <img class="" src="/img/800logo.png" alt="Workcation">
+        <!-- <img class="" src="/img/logo.jpg" alt="Workcation"> -->
+        <!-- <img class="h-10" src="/img/logo.svg" alt="Workcation"> -->
 
+        <!-- margin top of big image -->
+        <!-- rounded border radius and shadow -->
+        <!-- on small make wider, the image -->
+        <!-- object fit and object position of css-->
+        <img class="mt-6 rounded-lg shadow-xl sm:mt-8 sm:h-64 sm:w-full sm:object-cover sm:object-center lg:hidden"
+          src="/img/sky.jpg" alt="HMSoftware">
+          <!-- src="/img/beach-work.jpg" alt="Woman workcationing on the beach"> -->
+        <!-- line break on large screens only to force not to wrap-->
+        <h1 class="mt-6 text-2xl font-bold text-gray-900 leading-tight sm:mt-8 sm:text-4xl lg:text-3xl xl:text-4xl">
+          Software development
+          <!-- <br class="hidden lg:inline"><span class="text-indigo-500">Take advantage of it.</span> -->
+          <br class="hidden lg:inline"><span class="text-blue-500">Let us help you.</span>
+        </h1>
+        <p class="mt-2 text-gray-600 sm:mt-4 sm:text-xl">
+          With 20 years of experience in: .NET, Microsoft Azure, SQL Server. We make fast applications, on time, to fixed price contracts, so you know what you are getting.
+        </p>
+
+        <p class="mt-2 text-gray-600 sm:mt-4 sm:text-xl"> dave@hmsoftware.co.uk </p>
+
+        <p class="mt-2 text-gray-600 sm:mt-4 sm:text-xl"> 07584 126022</p>
+        <!-- we're not submitting a form so don't need a 'button'-->
+        <!-- links are inline elements by default so can' add padding to them properly, 
+      so need inline-block -->
+
+        <!-- tracking is typographical term for letter spacing -->
+        <div class="mt-4 sm:mt-6">
+          <!-- class="inline-block px-5 py-3 rounded-lg shadow-lg bg-indigo-500 text-sm hover:bg-indigo-400 active:bg-indigo-600 focus:outline-none focus:ring-2 text-white uppercase tracking-wider font-semibold sm:text-base"> -->
+          <!-- <a href="#" class="btn btn-indigo shadow-lg sm:text-base">Book your escape</a> -->
+          <!-- <a href="#" class="btn btn-indigo shadow-lg sm:text-base">Book your escape</a> -->
+          <!-- <a href="#" class="btn bg-brand-blue text-white shadow-lg sm:text-base">Book your escape</a> -->
+          <!-- <a href="#" class="btn text-white shadow-lg sm:text-base">Book your escape</a> -->
+          <!-- ml is margrin left-->
+          <a href="https://davemateer.com" class="ml-2 btn btn-gray sm:text-base">Learn more on our blog</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2nd container only for > lg-->
+    <!-- to make image fill entire height - use trickery-->
+    <!-- relative on container, and absolute for image with inset-0.. shortrhand for top 0, left 0, right 0, bottom 0 -->
+    <!-- ie stretching image to full size-->
+    <!-- and height and width full so image doesn't resize-->
+    <div class="hidden lg:block lg:w-1/2 lg:relative">
+      <img class="absolute inset-0 h-full w-full object-cover object-center" src="/img/sky.jpg"
+        alt="Woman workcationing on the beach">
+    </div>
+  </div>
+
+ 
+  </div>
 </body>
 </html>
